@@ -1,0 +1,36 @@
+{
+  "name": "Avion",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --fix",
+    "stylelint:fix": "stylelint \"src/**/*.{css,scss,vue}\" --fix",
+    "webp": "node scripts/generate-webp.js"
+  },
+  "dependencies": {
+    "axios": "^1.15.2",
+    "pinia": "^3.0.3",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-vue": "~10.2.0",
+    "globals": "^16.2.0",
+    "postcss-html": "^1.8.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "3.5.3",
+    "sass": "^1.89.2",
+    "stylelint": "^16.22.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
+    "vite": "^7.0.0",
+    "vite-plugin-imagemin": "^0.6.1"
+  }
+}
