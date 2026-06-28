@@ -169,7 +169,7 @@ const closeMobilePanel = () => {
       inset: 0;
       z-index: 20;
       display: block;
-      background-color: rgb(0 0 0 / 5%);
+      background-color: var(--overlay);
     }
   }
 

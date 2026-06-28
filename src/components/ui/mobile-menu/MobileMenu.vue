@@ -111,7 +111,7 @@ onBeforeUnmount(() => {
     position: fixed;
     inset: 0;
     z-index: 199;
-    background-color: rgb(42 37 75 / 40%);
+    background-color: var(--overlay);
   }
 
   &__top {
