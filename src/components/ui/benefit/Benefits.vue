@@ -37,6 +37,11 @@ defineProps({
     flex-wrap: wrap;
     align-items: center;
     gap: 20px 35px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__item {
