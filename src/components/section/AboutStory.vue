@@ -83,7 +83,7 @@ import { aboutStorys } from "@/components/model/aboutStorys"
       flex-direction: column;
 
       &--reverse {
-        flex-direction: column;
+        flex-direction: column-reverse;
       }
     }
   }
@@ -123,7 +123,7 @@ import { aboutStorys } from "@/components/model/aboutStorys"
 
     @include small-tablet {
       width: 100%;
-      height: clamp(220px, 60vw, 400px);
+      height: clamp(220px, 77vw, 590px);
     }
   }
 
