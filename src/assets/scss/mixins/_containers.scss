@@ -1,0 +1,55 @@
+// ─── Container Query миксины ──────────────────────────────────────────────────
+// Использование: @include cq-sm { .block { ... } }
+// Требует container-type: inline-size на родительском элементе
+
+// Именованный контейнер (опционально)
+// Использование: @include cq-sm('card') { .block { ... } }
+
+@mixin cq-xs($name: null) {
+  @if $name {
+    @container #{$name} (max-width: 239.98px) { @content; }
+  } @else {
+    @container (max-width: 239.98px) { @content; }
+  }
+}
+
+@mixin cq-sm($name: null) {
+  @if $name {
+    @container #{$name} (max-width: 359.98px) { @content; }
+  } @else {
+    @container (max-width: 359.98px) { @content; }
+  }
+}
+
+@mixin cq-md($name: null) {
+  @if $name {
+    @container #{$name} (max-width: 479.98px) { @content; }
+  } @else {
+    @container (max-width: 479.98px) { @content; }
+  }
+}
+
+@mixin cq-lg($name: null) {
+  @if $name {
+    @container #{$name} (max-width: 639.98px) { @content; }
+  } @else {
+    @container (max-width: 639.98px) { @content; }
+  }
+}
+
+// min-width варианты (расширяем)
+@mixin cq-sm-up($name: null) {
+  @if $name {
+    @container #{$name} (min-width: 360px) { @content; }
+  } @else {
+    @container (min-width: 360px) { @content; }
+  }
+}
+
+@mixin cq-md-up($name: null) {
+  @if $name {
+    @container #{$name} (min-width: 480px) { @content; }
+  } @else {
+    @container (min-width: 480px) { @content; }
+  }
+}

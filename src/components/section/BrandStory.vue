@@ -42,23 +42,32 @@ import { publicUrl } from "@/utils/publicUrl"
 
 <style lang="scss" scoped>
 .brand-story {
-  padding: 60px 0;
+  padding: clamp(32px, 4.2vw, 60px) 0;
 
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 30px;
     height: 100%;
 
     &--left {
-      padding: 64px;
+      padding: clamp(28px, 4.4vw, 64px);
       background-color: var(--dark-primary);
+
+      @include small-tablet {
+        order: 2;
+      }
     }
   }
 
@@ -80,6 +89,7 @@ import { publicUrl } from "@/utils/publicUrl"
     color: var(--white);
     font-size: var(--fs-18);
     font-weight: 400;
+    line-height: 1.6;
   }
 }
 </style>

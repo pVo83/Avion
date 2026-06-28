@@ -24,17 +24,23 @@ defineProps({
   &__list {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 44px;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
   }
 
   &__link {
     color: var(--dark-primary);
-    font-size: 16px;
+    font-size: var(--fs-16);
     font-weight: 400;
     transition: color 0.3s ease;
 
-    &:hover {
+    @include hover {
       color: var(--primary);
     }
   }

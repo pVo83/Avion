@@ -1,6 +1,6 @@
 <template>
   <main class="home">
-    <HeroBlocks />
+    <Hero />
     <Features />
     <Listings />
     <BrandStory />
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import HeroBlocks from "@/components/section/HeroBlocks.vue"
+import Hero from "@/components/section/Hero.vue"
 import Features from "@/components/section/Features.vue"
 import Listings from "@/components/section/Listings.vue"
 import BrandStory from "@/components/section/BrandStory.vue"

@@ -34,8 +34,9 @@ defineProps({
 .benefits {
   &__list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 35px;
+    gap: 20px 35px;
   }
 
   &__item {

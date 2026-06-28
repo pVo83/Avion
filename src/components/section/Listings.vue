@@ -50,6 +50,7 @@ const router = useRouter()
     color: var(--dark-primary);
     font-size: var(--fs-32);
     font-weight: 400;
+    line-height: 1.3;
   }
 
   &__content {
@@ -63,12 +64,22 @@ const router = useRouter()
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    width: 100%;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include small-mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    container-type: inline-size;
   }
 }
 </style>

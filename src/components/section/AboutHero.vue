@@ -22,7 +22,7 @@
     width: 100%;
     max-width: 710px;
     margin: 0 auto;
-    padding: 70px 0;
+    padding: clamp(40px, 4.9vw, 70px) 0;
   }
 
   &__title {

@@ -53,9 +53,15 @@ import { aboutStorys } from "@/components/model/aboutStorys"
 .about-story {
   &__content {
     display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -72,6 +78,14 @@ import { aboutStorys } from "@/components/model/aboutStorys"
     &--reverse {
       flex-direction: row-reverse;
     }
+
+    @include small-tablet {
+      flex-direction: column;
+
+      &--reverse {
+        flex-direction: column;
+      }
+    }
   }
 
   &__item-info {
@@ -79,8 +93,13 @@ import { aboutStorys } from "@/components/model/aboutStorys"
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
-    padding: 70px 100px;
+    padding: clamp(32px, 4.9vw, 70px) clamp(20px, 7vw, 100px);
     gap: 20px;
+
+    @include small-tablet {
+      width: 100%;
+      padding: 32px 20px;
+    }
   }
 
   &__item-info-content {
@@ -101,6 +120,11 @@ import { aboutStorys } from "@/components/model/aboutStorys"
 
   &__item-image {
     width: 50%;
+
+    @include small-tablet {
+      width: 100%;
+      height: clamp(220px, 60vw, 400px);
+    }
   }
 
   &__image {

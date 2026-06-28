@@ -77,7 +77,13 @@ const handleAddToCart = () => {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 10px;
+    gap: 30px 20px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
   }
 
   &__left {
@@ -85,7 +91,6 @@ const handleAddToCart = () => {
     align-items: center;
     justify-content: flex-start;
     gap: 16px;
-    width: 100%;
   }
 
   &__label {
@@ -123,6 +128,10 @@ const handleAddToCart = () => {
       width: 46px;
       height: 46px;
       padding: 12px 16px;
+    }
+
+    @include mobile {
+      width: 100%;
     }
   }
 }

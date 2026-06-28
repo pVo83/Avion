@@ -108,22 +108,32 @@ const cartStore = useCartStore()
 <style lang="scss" scoped>
 .shopping-baskets {
   width: 100%;
-  padding: 80px 0;
+  padding: clamp(32px, 5.5vw, 80px) 0;
   background-color: var(--light-gray);
 
   &__content {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    padding: 60px;
+    padding: clamp(20px, 4.2vw, 60px);
     background: var(--white);
     min-height: 590px;
+
+    @include mobile {
+      padding: 20px 16px;
+      gap: 32px;
+    }
   }
 
   &__table {
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 20px 50px;
+
+    @include small-tablet {
+      grid-template-columns: 1fr auto;
+      gap: 0 16px;
+    }
   }
 
   &__head {
@@ -133,10 +143,21 @@ const cartStore = useCartStore()
     font-weight: 400;
     line-height: 1.5;
     border-bottom: 1px solid var(--light-gray);
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__product {
     gap: 20px;
+
+    @include small-tablet {
+      grid-column: 1 / -1;
+      flex-wrap: wrap;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
   }
 
   &__product-image {
@@ -198,8 +219,15 @@ const cartStore = useCartStore()
     flex-direction: column;
     gap: 16px;
     align-items: flex-start;
-    justify-content: center;
     width: 145px;
+
+    @include small-tablet {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
   }
 
   &__count-box {
@@ -236,7 +264,7 @@ const cartStore = useCartStore()
     cursor: pointer;
     transition: opacity var(--trs35);
 
-    &:hover {
+    @include hover {
       opacity: 0.6;
     }
   }
@@ -246,7 +274,16 @@ const cartStore = useCartStore()
     color: var(--dark-primary);
     font-size: var(--fs-18);
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.4;
+    white-space: nowrap;
+
+    @include small-tablet {
+      width: auto;
+      height: 79px;
+      padding: 16px 0;
+      align-self: center;
+      border-bottom: 1px solid var(--border-gray);
+    }
   }
 
   &__empty-cart {
@@ -274,6 +311,11 @@ const cartStore = useCartStore()
     grid-template-columns: 1fr 250px;
     gap: 20px;
     border-top: 1px solid var(--border-gray);
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      padding: 16px 0 0;
+    }
   }
 
   &__bottom-text {
@@ -288,12 +330,20 @@ const cartStore = useCartStore()
     flex-direction: column;
     gap: 20px;
     align-items: flex-end;
+
+    @include small-tablet {
+      align-items: stretch;
+    }
   }
 
   &__total {
     display: flex;
     gap: 10px;
     align-items: center;
+
+    @include small-tablet {
+      justify-content: space-between;
+    }
 
     &-label {
       color: var(--dark-primary);

@@ -160,9 +160,10 @@ const isImageVariant = computed(() => props.variant === "image")
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0 20px;
     transform: translate(-50%, -50%);
     gap: 30px;
-    max-width: 510px;
+    max-width: 560px;
   }
 
   &__title {

@@ -5,7 +5,7 @@
 
   // container
   --content-width: 1280px;
-  --container-offset: 15px;
+  --container-offset: 20px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // colors
@@ -17,14 +17,23 @@
   --white: #fff;
   --border-dark: #cac6da;
 
-  // font-sizes
-  --fs-14: 0.875rem;
-  --fs-16: 1rem;
-  --fs-18: 1.125rem;
-  --fs-20: 1.25rem;
-  --fs-24: 1.5rem;
-  --fs-32: 2rem;
-  --fs-36: 2.25rem;
+  // font-sizes — fluid: scale smoothly from mobile to desktop
+  // --fs-14: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);
+  // --fs-16: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  // --fs-18: clamp(1rem, 0.9rem + 0.45vw, 1.125rem);
+  // --fs-20: clamp(1.0625rem, 0.95rem + 0.56vw, 1.25rem);
+  // --fs-24: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  // --fs-32: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  // --fs-36: clamp(1.625rem, 1.3rem + 1.65vw, 2.25rem);
+
+
+  --fs-14: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);
+  --fs-16: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --fs-18: clamp(1rem, 0.964rem + 0.18vw, 1.125rem);
+  --fs-20: clamp(1.125rem, 1.089rem + 0.18vw, 1.25rem);
+  --fs-24: clamp(1.25rem, 1.179rem + 0.36vw, 1.5rem);
+  --fs-32: clamp(1.5rem, 1.357rem + 0.71vw, 2rem);
+  --fs-36: clamp(1.5rem, 1.357rem + 0.71vw, 2rem);
 
   // transitions
   --trs35: 0.35s ease-in-out;

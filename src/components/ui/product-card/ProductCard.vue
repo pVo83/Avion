@@ -35,7 +35,7 @@ defineProps({
   overflow: hidden;
   gap: 16px;
 
-  &:hover {
+  @include hover {
     .product-card__image::before {
       background-color: rgb(0 0 0 / 10%);
     }
@@ -78,4 +78,19 @@ defineProps({
     line-height: 1.5;
   }
 }
+
+// Карточка адаптируется под контейнер, а не под viewport
+// @include cq-xs {
+//   .product-card {
+//     gap: 10px;
+
+//     &__name {
+//       font-size: var(--fs-14);
+//     }
+
+//     &__price {
+//       font-size: var(--fs-14);
+//     }
+//   }
+// }
 </style>

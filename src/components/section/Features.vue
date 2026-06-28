@@ -50,7 +50,7 @@ const features = [
 
 <style lang="scss" scoped>
 .features {
-  padding: 80px 0;
+  padding: clamp(40px, 6vw, 80px) 0;
 
   &__content {
     display: flex;
@@ -64,19 +64,29 @@ const features = [
     font-size: var(--fs-24);
     font-weight: 400;
     line-height: 1.4;
+    text-align: center;
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    width: 100%;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 48px;
+    padding: clamp(24px, 3.3vw, 48px);
     background-color: var(--light-gray);
   }
 

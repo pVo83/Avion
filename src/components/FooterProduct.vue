@@ -65,9 +65,18 @@ import Logo from "@/components/ui/logo/Logo.vue"
 
   &__main {
     display: grid;
-    grid-template-columns: 250px 350px 1fr;
-    gap: 40px;
+    grid-template-columns: auto auto auto;
+    gap: 60px;
     padding: 60px 0 40px;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      padding: 40px 0 32px;
+    }
   }
 
   &__socials {
@@ -80,6 +89,14 @@ import Logo from "@/components/ui/logo/Logo.vue"
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
+    @include tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__column {
@@ -112,7 +129,7 @@ import Logo from "@/components/ui/logo/Logo.vue"
     line-height: 1.5;
     transition: color var(--trs35);
 
-    &:hover {
+    @include hover {
       color: var(--border-dark);
     }
   }
@@ -124,6 +141,11 @@ import Logo from "@/components/ui/logo/Logo.vue"
     gap: 40px;
     height: 68px;
     border-top: 1px solid var(--primary);
+
+    @include small-tablet {
+      height: auto;
+      padding: 20px 0;
+    }
   }
 
   &__copyright {

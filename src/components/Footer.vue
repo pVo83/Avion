@@ -49,15 +49,27 @@ import Social from "@/components/ui/social/Social.vue"
 
   &__main {
     display: grid;
-    grid-template-columns: 1fr 627px;
+    grid-template-columns: auto auto;
     gap: 40px;
     padding: 60px 0 40px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    @include small-tablet {
+      padding: 40px 0 32px;
+    }
   }
 
   &__columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__column {
@@ -90,7 +102,7 @@ import Social from "@/components/ui/social/Social.vue"
     line-height: 1.5;
     transition: color var(--trs35);
 
-    &:hover {
+    @include hover {
       color: var(--border-dark);
     }
   }
@@ -108,6 +120,13 @@ import Social from "@/components/ui/social/Social.vue"
     gap: 40px;
     height: 68px;
     border-top: 1px solid var(--primary);
+
+    @include small-tablet {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+      gap: 16px;
+    }
   }
 
   &__copyright {

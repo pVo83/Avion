@@ -24,6 +24,8 @@ defineProps({
 
 <style lang="scss" scoped>
 .logo {
+  display: flex;
+
   &__link {
     display: inline-flex;
     color: var(--dark-primary);
