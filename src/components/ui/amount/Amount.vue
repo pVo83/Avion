@@ -25,7 +25,7 @@
       </div>
 
       <Button
-        class="amount__button"
+        class="amount__button--main"
         title="Add to cart"
         size="medium"
         variant="primary"
@@ -130,8 +130,10 @@ const handleAddToCart = () => {
       padding: 12px 16px;
     }
 
-    @include mobile {
-      width: 100%;
+    &--main {
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 }
