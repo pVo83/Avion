@@ -166,12 +166,22 @@ const isImageVariant = computed(() => props.variant === "image")
     max-width: 560px;
   }
 
+  &__content-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+
+    @include mobile {
+      text-align: left;
+    }
+  }
+
   &__title {
     color: var(--white);
     font-size: var(--fs-32);
     font-weight: 400;
     line-height: 1.4;
-    text-align: center;
   }
 
   &__description {
@@ -179,7 +189,6 @@ const isImageVariant = computed(() => props.variant === "image")
     font-size: var(--fs-18);
     font-weight: 400;
     line-height: 1.5;
-    text-align: center;
   }
 
   &--card {
