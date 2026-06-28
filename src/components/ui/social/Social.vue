@@ -27,13 +27,23 @@ defineProps({
 
 <style lang="scss" scoped>
 .social {
+  &__item {
+    display: flex;
+  }
+
   &__list {
     display: flex;
     align-items: center;
     gap: 24px;
+
+    @include mobile {
+      gap: 24px;
+      flex-wrap: wrap;
+    }
   }
 
   &__link {
+    flex-shrink: 0;
     color: var(--white);
     transition: color var(--trs35);
 

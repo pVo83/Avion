@@ -74,8 +74,7 @@ import Logo from "@/components/ui/logo/Logo.vue"
     }
 
     @include small-tablet {
-      grid-template-columns: 1fr;
-      padding: 40px 0 32px;
+      flex-shrink: 0;
     }
   }
 
@@ -83,12 +82,13 @@ import Logo from "@/components/ui/logo/Logo.vue"
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 5px 0 0;
   }
 
   &__columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 60px;
 
     @include tablet {
       grid-column: 1 / -1;

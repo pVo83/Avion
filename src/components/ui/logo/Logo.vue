@@ -44,8 +44,8 @@ defineProps({
     }
 
     &--medium {
-      width: 97px;
-      height: 45px;
+      width: 100px;
+      height: 26px;
     }
   }
 }
