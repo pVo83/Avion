@@ -132,7 +132,7 @@ const cartStore = useCartStore()
 
     @include small-tablet {
       grid-template-columns: 1fr auto;
-      gap: 0 16px;
+      gap: 0 24px;
     }
   }
 
@@ -205,6 +205,7 @@ const cartStore = useCartStore()
   &__quantity:nth-last-child(2),
   &__row-total:last-child {
     border-bottom: none;
+    flex-wrap: wrap;
   }
 
   &__product-price {
