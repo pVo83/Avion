@@ -45,7 +45,7 @@ import { allListings } from "@/components/model/listings"
   &__header {
     display: flex;
     flex-direction: column;
-    padding: 80px;
+    padding: clamp(32px, 5.5vw, 80px) var(--container-offset);
     background-color: var(--light-gray);
     gap: 20px;
     text-align: center;

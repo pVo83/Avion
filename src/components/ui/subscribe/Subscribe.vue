@@ -71,6 +71,14 @@ const subscribeInputClasses = computed(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  gap: 0;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
 
   &__input {
     width: 100%;
@@ -110,6 +118,18 @@ const subscribeInputClasses = computed(() => {
     width: 118px;
     min-width: 118px;
     height: 56px;
+
+    @include mobile {
+      width: 100%;
+      min-width: unset;
+
+      &.button--small,
+      &.button--medium,
+      &.button--large {
+        width: 100%;
+        min-width: unset;
+      }
+    }
   }
 }
 </style>
