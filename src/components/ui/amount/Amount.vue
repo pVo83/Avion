@@ -93,6 +93,12 @@ const handleAddToCart = () => {
     align-items: center;
     justify-content: flex-start;
     gap: 16px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
   }
 
   &__label {
@@ -106,6 +112,10 @@ const handleAddToCart = () => {
     display: flex;
     align-items: center;
     background: var(--light-gray);
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__value {
@@ -117,6 +127,10 @@ const handleAddToCart = () => {
     color: var(--dark-primary);
     font-size: var(--fs-16);
     font-weight: 400;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__button {
