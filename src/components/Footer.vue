@@ -1,44 +1,62 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="`footer--${variant}`">
     <div class="container footer__container">
       <div class="footer__main">
-        <ul class="footer__columns">
-          <li v-for="column in footerColumns" :key="column.id" class="footer__column">
-            <h3 class="footer__heading">{{ column.title }}</h3>
-            <ul class="footer__nav">
-              <li v-for="link in column.links" :key="link.id" class="footer__nav-item">
-                <router-link class="footer__nav-link" :to="link.href">
-                  {{ link.title }}
-                </router-link>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <template v-if="variant === 'default'">
+          <FooterColumns />
+          <div class="footer__newsletter">
+            <h3 class="footer__heading">Join our mailing list</h3>
+            <Subscribe
+              class="footer__subscribe"
+              variantButton="white"
+              sizeButton="small"
+              variantInput="primary-secondary"
+            />
+          </div>
+        </template>
 
-        <div class="footer__newsletter">
-          <h3 class="footer__heading">Join our mailing list</h3>
-          <Subscribe
-            class="footer__subscribe"
-            variantButton="white"
-            sizeButton="small"
-            variantInput="primary-secondary"
-          />
-        </div>
+        <template v-else>
+          <div class="footer__brand">
+            <Logo isWhite size="medium" />
+            <address class="footer__address">
+              <p>21 New York Street</p>
+              <p>New York City</p>
+              <p>United States of America</p>
+              <p>432 34</p>
+            </address>
+          </div>
+
+          <div class="footer__socials">
+            <h3 class="footer__heading">Social links</h3>
+            <Social :socials="socials" name="socials" />
+          </div>
+
+          <FooterColumns class="footer__columns" />
+        </template>
       </div>
 
       <div class="footer__bottom">
         <p class="footer__copyright">Copyright 2022 Avion LTD</p>
-        <Social class="footer__social" :socials="socials" name="socials" />
+        <Social v-if="variant === 'default'" class="footer__social" :socials="socials" name="socials" />
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { footerColumns } from "@/components/model/footerColumns"
 import { socials } from "@/components/model/socials"
+import FooterColumns from "@/components/ui/footer-columns/FooterColumns.vue"
 import Subscribe from "@/components/ui/subscribe/Subscribe.vue"
 import Social from "@/components/ui/social/Social.vue"
+import Logo from "@/components/ui/logo/Logo.vue"
+
+defineProps({
+  variant: {
+    type: String,
+    default: "default",
+    validator: (value) => ["default", "product"].includes(value),
+  },
+})
 </script>
 
 <style lang="scss" scoped>
@@ -49,43 +67,12 @@ import Social from "@/components/ui/social/Social.vue"
 
   &__main {
     display: grid;
-    grid-template-columns: auto auto;
     gap: 40px;
     padding: 60px 0 40px;
-
-    @include tablet {
-      grid-template-columns: 1fr;
-    }
 
     @include small-tablet {
       padding: 40px 0 32px;
     }
-  }
-
-  &__columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
-    @include mobile {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  &__column {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  &__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  &__nav-item {
-    line-height: 1;
   }
 
   &__heading {
@@ -95,22 +82,30 @@ import Social from "@/components/ui/social/Social.vue"
     line-height: 1.5;
   }
 
-  &__nav-link {
-    color: var(--white);
-    font-size: var(--fs-14);
-    font-weight: 400;
-    line-height: 1.5;
-    transition: color var(--trs35);
-
-    @include hover {
-      color: var(--border-dark);
-    }
-  }
-
   &__newsletter {
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-style: normal;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 5px 0 0;
   }
 
   &__bottom {
@@ -134,6 +129,46 @@ import Social from "@/components/ui/social/Social.vue"
     font-size: var(--fs-14);
     font-weight: 400;
     line-height: 1.5;
+  }
+
+  &--default {
+    .footer__main {
+      grid-template-columns: auto auto;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &--product {
+    .footer__main {
+      grid-template-columns: auto auto auto;
+      gap: 60px;
+
+      @include tablet {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include small-tablet {
+        flex-shrink: 0;
+      }
+    }
+
+    .footer__columns {
+      gap: 60px;
+
+      @include tablet {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .footer__bottom {
+      @include small-tablet {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
   }
 }
 </style>

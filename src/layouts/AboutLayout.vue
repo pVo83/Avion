@@ -4,7 +4,7 @@
     <main class="main">
       <slot />
     </main>
-    <Footer />
+    <Footer variant="default" />
   </div>
   <Icons />
 </template>
