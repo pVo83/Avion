@@ -1,6 +1,6 @@
 <template>
   <div class="site-container">
-    <HeaderAbout />
+    <Header variant="about" show-banner />
     <main class="main">
       <slot />
     </main>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import HeaderAbout from "@/components/HeaderAbout.vue"
+import Header from "@/components/Header.vue"
 import Footer from "@/components/Footer.vue"
 import Icons from "@/assets/Icons.vue"
 </script>

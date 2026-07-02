@@ -1,6 +1,6 @@
 <template>
   <div class="site-container">
-    <HeaderProducts />
+    <Header variant="inner" />
     <main class="main">
       <slot />
     </main>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import HeaderProducts from "@/components/HeaderProducts.vue"
+import Header from "@/components/Header.vue"
 import Footer from "@/components/Footer.vue"
 import Icons from "@/assets/Icons.vue"
 </script>

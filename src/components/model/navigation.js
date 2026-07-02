@@ -36,4 +36,10 @@ export const navigationItems = [
   },
 ]
 
+export const navAboutItems = [
+  { id: 1, title: "About us", href: "/about" },
+  { id: 2, title: "Contact", href: "/contacts" },
+  { id: 3, title: "Blog", href: "/blog" },
+]
+
 export default navigationItems
