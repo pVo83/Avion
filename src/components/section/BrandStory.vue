@@ -7,7 +7,7 @@
             <div class="brand-story__item-text">
               <h2 class="brand-story__title">It started with a small idea</h2>
               <p class="brand-story__description">
-                A global brand with local beginnings, our story begain in a small studio in South
+                A global brand with local beginnings, our story began in a small studio in South
                 London in early 2014
               </p>
             </div>

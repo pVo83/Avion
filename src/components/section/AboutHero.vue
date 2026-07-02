@@ -3,7 +3,7 @@
     <div class="container">
       <div class="about-hero__content">
         <h1 class="about-hero__title">
-          A brand built on the love of craftmanship, quality and outstanding customer service
+          A brand built on the love of craftsmanship, quality and outstanding customer service
         </h1>
       </div>
     </div>

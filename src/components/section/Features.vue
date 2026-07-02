@@ -31,7 +31,7 @@ const features = [
     id: 2,
     icon: "Checkmark",
     title: "Made by true artisans",
-    description: "Handmade crafted goods made with real passion and craftmanship",
+    description: "Handmade crafted goods made with real passion and craftsmanship",
   },
   {
     id: 3,

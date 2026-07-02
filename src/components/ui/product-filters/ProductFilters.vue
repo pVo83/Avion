@@ -188,10 +188,8 @@ const closeMobilePanel = () => {
       padding: 20px 20px 15px;
       background-color: var(--white);
       max-height: calc(100dvh - 180px);
-
-      // overflow-y: auto;
       overscroll-behavior: contain;
-      box-shadow: 0 8px 0 0 white;
+      box-shadow: 0 12px 0 0 #f2f2f2;
       gap: 20px;
       border-bottom: 1px solid var(--primary);
     }

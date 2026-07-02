@@ -8,7 +8,15 @@
       </span>
     </div>
 
-    <Button class="banners-top__button" width="18" height="18" icon="Close" :icon-only="true" @click="closeBanner" />
+    <Button
+      class="banners-top__button"
+      width="18"
+      height="18"
+      icon="Close"
+      :icon-only="true"
+      aria-label="Close banner"
+      @click="closeBanner"
+    />
   </div>
 </template>
 

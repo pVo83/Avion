@@ -33,6 +33,7 @@
                   icon="minus"
                   icon-only
                   variant="secondary"
+                  aria-label="Decrease quantity"
                   :disabled="item.quantity === 1"
                   @click="cartStore.updateQuantity(item.product.id, item.quantity - 1)"
                 />
@@ -42,6 +43,7 @@
                   icon="plus"
                   icon-only
                   variant="secondary"
+                  aria-label="Increase quantity"
                   :disabled="item.quantity === 5"
                   @click="cartStore.updateQuantity(item.product.id, item.quantity + 1)"
                 />

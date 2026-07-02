@@ -9,6 +9,7 @@
             icon="minus"
             icon-only
             variant="secondary"
+            aria-label="Decrease quantity"
             :disabled="count === 1"
             @click="handleDecrease"
           />
@@ -18,6 +19,7 @@
             icon="plus"
             icon-only
             variant="secondary"
+            aria-label="Increase quantity"
             :disabled="count === 5"
             @click="handleIncrease"
           />

@@ -12,8 +12,8 @@ export const aboutStorys = [
     id: 2,
     title: "From a studio in London to a global brand with over 400 outlets",
     descriptions: [
-      "Our story begain in a small studio in South London in early 2014",
-      "A global brand with local beginnings, our story begain in a small studio in South London in early 2014",
+      "Our story began in a small studio in South London in early 2014",
+      "A global brand with local beginnings, our story began in a small studio in South London in early 2014",
     ],
     image: "about-story2",
   },

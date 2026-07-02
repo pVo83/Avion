@@ -4,16 +4,17 @@
     variant="ghost"
     icon="Menu"
     :icon-only="true"
-    aria-label="Open menu"
-    aria-expanded="false"
+    :aria-label="ariaLabel"
+    :aria-expanded="isOpen"
     @click="$emit('toggle')"
   />
 </template>
 
 <script setup>
+import { computed } from "vue"
 import Button from "@/components/ui/button/Button.vue"
 
-defineProps({
+const props = defineProps({
   isOpen: {
     type: Boolean,
     default: false,
@@ -21,6 +22,8 @@ defineProps({
 })
 
 defineEmits(["toggle"])
+
+const ariaLabel = computed(() => (props.isOpen ? "Close menu" : "Open menu"))
 </script>
 
 <style lang="scss" scoped>

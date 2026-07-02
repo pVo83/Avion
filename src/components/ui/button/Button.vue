@@ -4,13 +4,20 @@
     :class="buttonClasses"
     :disabled="disabled"
     :type="type"
+    :aria-label="ariaLabel || undefined"
     @click="$emit('click', $event)"
   >
     <span v-if="!iconOnly" class="button__text">
       <slot>{{ title }}</slot>
     </span>
     <span v-if="hasIcon" class="button__icon" aria-hidden="true" />
-    <AppIcon v-if="icon" :name="icon" :width="width" :height="height" />
+    <AppIcon
+      v-if="icon"
+      :name="icon"
+      :width="width"
+      :height="height"
+      aria-hidden="true"
+    />
   </button>
 </template>
 
@@ -58,7 +65,11 @@ const props = defineProps({
   iconOnly: {
     type: Boolean,
     default: false,
-    },
+  },
+  ariaLabel: {
+    type: String,
+    default: "",
+  },
   width: {
     type: [Number, String],
     default: 24,

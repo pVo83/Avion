@@ -19,14 +19,6 @@ defineProps({
     type: Array,
     required: true,
   },
-  icon: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
 })
 </script>
 
